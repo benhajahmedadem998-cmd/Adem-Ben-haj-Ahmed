@@ -1,0 +1,6 @@
+{
+  "name": "AUROS CARS - The Art of Driving",
+  "description": "Location de voitures de luxe, SUV, sportives et citadines premium à Tunis. Découvrez l'élégance, la liberté et la performance avec AUROS CARS.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

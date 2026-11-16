@@ -1,0 +1,110 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --color-obsidian: #0a0a0a;
+  --color-anthracite: #111111;
+  --color-gold-light: #fde08d;
+  --color-gold-amber: #f5af19;
+  --color-gold-bronze: #f12711;
+}
+
+@layer base {
+  html {
+    font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+    background-color: #0a0a0a;
+    color: #f5f5f4;
+    scroll-padding-top: 84px;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #0a0a0a;
+  }
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #fde08d 0%, #f5af19 52%, #d97706 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gold-bronze-gradient {
+  background: linear-gradient(110deg, #fde08d 0%, #f5af19 50%, #f12711 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(110deg, #f5af19 0%, #e67e12 55%, #f12711 100%);
+}
+
+.bg-gold-shimmer {
+  background: linear-gradient(120deg, #fde08d 0%, #f5af19 45%, #d96b14 100%);
+}
+
+.gold-glow-btn {
+  box-shadow: 0 8px 28px -6px rgba(245, 175, 25, 0.45), 0 2px 10px -2px rgba(241, 39, 17, 0.25);
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1), filter 180ms ease;
+}
+
+.gold-glow-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px -6px rgba(245, 175, 25, 0.65), 0 4px 16px -2px rgba(241, 39, 17, 0.38);
+  filter: brightness(1.06);
+}
+
+.gold-glow-btn:active {
+  transform: translateY(0);
+}
+
+.category-card-glow {
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.category-card-glow:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 175, 25, 0.6);
+  box-shadow:
+    0 18px 42px -12px rgba(245, 175, 25, 0.32),
+    0 0 28px -8px rgba(16, 185, 129, 0.25);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes showcase-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-showcase-enter {
+  animation: showcase-enter 220ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
